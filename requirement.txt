@@ -1,0 +1,23 @@
+
+0. update packages (sudo apt update)
+1. create a new user
+2. add this user to the sudo group (sudo usermod -aG raddy)
+3. login as that new user (sudo su -raddy)
+4. update (sudo apt update)
+5. install nvm (maybe using shell)
+6. use required nodejs (we will take this value from variable)
+7. install pm2 (this is nodejs process manager)
+8. setup github runner on the machine
+9. run this runner as service (sudo ./vc.sh install, check status sudo ./svc.sh status)
+========================
+now there should be an wait that my. project (on github deploy project on the selected machin through github action. then rest of the step should run. also should map this ip to the domain
+=========================
+10. now go cd ~/actions-runner/_work/repo_name/repo_name/ and run pm2 start npm --name "project name" -- start --watch
+11. make this watch permanent (pm2 startup then it will show a line that should be run on terminal (here password will be asked)) then pm2 save
+13. install nginx
+14. modify site available in nginx for domain then run some comand for site enable
+15. then restart the nginx service 
+15.5 sudo nginx -t
+16. install certbot, python3-certbot-nginx
+17. now follow the process for ssl certificate (i think shell file should use here)
+18. create a cronjob for updating the ssl certificate
